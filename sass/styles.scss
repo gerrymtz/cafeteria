@@ -37,7 +37,7 @@ body {
             justify-content: space-between;
             align-items: center;
 
-            .nav__info {
+            .nav__logo {
                 display: flex;
                 align-items: center;
                 gap: 30px;
@@ -72,6 +72,10 @@ body {
                     display: inline;
                     margin-right: 25px;
 
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
                     .menu__link {
                         text-decoration: none;
                         color: index.$color_principal_1;
@@ -96,9 +100,18 @@ body {
 
         .header__container {
             height: 100%;
+            display: flex;
+            align-items: center;
 
             .header__text {
-                
+                background-color: index.$color_secundario_1;
+                color: white;
+                font-family: index.$roboto;
+                font-size: index.$roboto64;
+                font-weight: index.$robotoW400;
+                padding: 20px 50px;
+                letter-spacing: 3px;
+                border-radius: 5px;
             }
 
         }

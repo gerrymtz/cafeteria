@@ -48,23 +48,23 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-.header .header__nav .header__container .nav__info {
+.header .header__nav .header__container .nav__logo {
   display: flex;
   align-items: center;
   gap: 30px;
 }
-.header .header__nav .header__container .nav__info .nav__name {
+.header .header__nav .header__container .nav__logo .nav__name {
   text-decoration: none;
   font-size: 24px;
   font-weight: 700;
   color: #284148;
 }
-.header .header__nav .header__container .nav__info .nav__figure {
+.header .header__nav .header__container .nav__logo .nav__figure {
   width: 60px;
   height: 60px;
   order: -1;
 }
-.header .header__nav .header__container .nav__info .nav__figure .nav__img {
+.header .header__nav .header__container .nav__logo .nav__figure .nav__img {
   width: 100%;
   height: 100%;
   display: block;
@@ -74,6 +74,9 @@ body {
   list-style-type: none;
   display: inline;
   margin-right: 25px;
+}
+.header .header__nav .header__container .nav__menu .menu__item:last-child {
+  margin-right: 0;
 }
 .header .header__nav .header__container .nav__menu .menu__item .menu__link {
   text-decoration: none;
@@ -91,6 +94,18 @@ body {
 }
 .header .header__main .header__container {
   height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header .header__main .header__container .header__text {
+  background-color: #D88260;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 64px;
+  font-weight: 400;
+  padding: 20px 50px;
+  letter-spacing: 3px;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=styles.css.map */
