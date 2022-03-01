@@ -1,0 +1,33 @@
+@use "../partials/variables";
+
+
+@mixin resetSettings {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+@mixin setHTML {
+    height: 100%;
+}
+
+@mixin setBody {
+    min-height: 100vh;
+    width: 100%;
+}
+
+@mixin setContainer {
+    width: 90%;
+    max-width: 1300px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: variables.$padding_container;
+    outline: 2px solid red;
+}
+
+@mixin setHeightMarginTop {
+    height: calc(100% - variables.$height_navbar);
+    margin-top: variables.$height_navbar;
+}

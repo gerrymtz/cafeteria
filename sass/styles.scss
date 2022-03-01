@@ -1,0 +1,108 @@
+@use "index/index";
+
+*,
+::after,
+::before {
+    @include index.resetSettings;
+}
+
+html {
+    @include index.setHTML;
+}
+
+body {
+    @include index.setBody;
+}
+
+.container {
+    @include index.setContainer;
+}
+
+.header {
+    height: 100vh;
+
+    .header__nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: index.$height_navbar;
+        background-color: white;
+        font-family: index.$roboto;
+
+        .header__container {
+            height: 100%;
+            padding: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .nav__info {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+
+                .nav__name {
+                    text-decoration: none;
+                    font-size: index.$roboto24;
+                    font-weight: index.$robotoW700;
+                    color: index.$color_principal_1;
+                }
+
+                .nav__figure {
+                    width: 60px;
+                    height: 60px;
+                    order: -1;
+
+                    .nav__img {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        object-fit: cover;
+                    }
+                    
+                }
+
+            }
+
+            .nav__menu {
+
+                .menu__item {
+                    list-style-type: none;
+                    display: inline;
+                    margin-right: 25px;
+
+                    .menu__link {
+                        text-decoration: none;
+                        color: index.$color_principal_1;
+                        font-size: index.$roboto16;
+                        font-weight: index.$robotoW400;
+                    }
+
+                }
+
+            }
+            
+        }
+
+    }
+
+    .header__main {
+        @include index.setHeightMarginTop;
+        background-image: url(../assets/images/header_background.jpg);
+        background-position: center;
+        background-size: cover;
+        background-attachment: fixed;
+
+        .header__container {
+            height: 100%;
+
+            .header__text {
+                
+            }
+
+        }
+
+    }
+
+}
