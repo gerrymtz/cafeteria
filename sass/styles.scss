@@ -20,12 +20,14 @@ body {
 
 .header {
     height: 100vh;
+    padding-top: 0.1px;
 
     .header__nav {
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
+        z-index: 1;
         height: index.$height_navbar;
         background-color: white;
         font-family: index.$roboto;
@@ -45,7 +47,7 @@ body {
                 .nav__name {
                     text-decoration: none;
                     font-size: index.$roboto24;
-                    font-weight: index.$robotoW700;
+                    font-weight: index.$robotoW500;
                     color: index.$color_principal_1;
                 }
 
@@ -79,7 +81,7 @@ body {
                     .menu__link {
                         text-decoration: none;
                         color: index.$color_principal_1;
-                        font-size: index.$roboto16;
+                        font-size: index.$roboto14;
                         font-weight: index.$robotoW400;
                     }
 
@@ -108,10 +110,363 @@ body {
                 color: white;
                 font-family: index.$roboto;
                 font-size: index.$roboto64;
-                font-weight: index.$robotoW400;
+                font-weight: index.$robotoW500;
                 padding: 20px 50px;
                 letter-spacing: 3px;
-                border-radius: 5px;
+                border-radius: 10px;
+            }
+
+        }
+
+    }
+
+}
+
+.main {
+
+    .bebidas {
+        background-color: index.$color_secundario_4;
+        height: auto;
+        padding-top: 0.1px;
+
+        .bebidas__container {
+            min-height: 480px;
+            margin-top: index.$height_navbar;
+            font-family: index.$roboto;
+
+            .bebidas__title {
+                @include index.titleSettings;
+            }
+
+            .bebidas__cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-auto-rows: max-content;
+                place-items: center;
+
+                .bebidas__card {
+                    width: 80%;
+                    height: 100%;
+                    cursor: pointer;
+                    transform: scale(1);
+                    transition: 200ms transform ease-in-out;
+
+                    .bebidas__img {
+                        width: 100%;
+                        display: block;
+                        object-fit: cover;
+                        border-radius: 10px;
+                    }
+
+                    .bebidas__name {
+                        @include index.nameSettings;
+                    }
+
+                    .bebidas__price {
+                        @include index.priceSettings;
+                    }
+
+                    &:hover {
+                        transform: scale(1.2);
+                        transition: 400ms transform ease-in-out;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .desayunos {
+        height: auto;
+        padding-top: 0.1px;
+
+        .desayunos__container {
+            min-height: 480px;
+            margin-top: index.$height_navbar;
+            font-family: index.$roboto;
+    
+            .desayunos__title {
+                @include index.titleSettings;
+            }
+    
+            .desayunos__cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-auto-rows: max-content;
+                place-items: center;
+    
+                .desayunos__card {
+                    width: 70%;
+                    height: 100%;
+                    cursor: pointer;
+                    transform: translateY(0);
+                    transition: 200ms transform ease-in-out;
+    
+                    .desayunos__img {
+                        width: 100%;
+                        height: 200px;
+                        display: block;
+                        object-fit: cover;
+                        border-radius: 10px
+                    }
+    
+                    .desayunos__name {
+                        @include index.nameSettings;
+                    }
+    
+                    .desayunos__price {
+                        @include index.priceSettings;
+                    }
+
+                    &:hover {
+                        transform: translateY(-20%);
+                        transition: 400ms transform ease-in-out;
+                    }
+    
+                }
+    
+            }
+    
+        }
+
+    }
+
+    .platillos {
+        height: auto;
+        padding-top: 0.1px;
+        background-color: index.$color_secundario_5;
+
+        .platillos__container {
+            min-height: 100vh;
+            margin-top: index.$height_navbar;
+            font-family: index.$roboto;
+
+            .platillos__title {
+                @include index.titleSettings;
+            }
+
+            .platillos__cards {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(300px, 1fr));
+                grid-auto-rows: max-content;
+                gap: 35px;
+
+                .platillos__texts {
+                    width: 70%;
+                    height: 100%;
+
+                    &:nth-of-type(odd) {
+                        place-self: end;
+                    }
+
+                    &:nth-of-type(even) {
+                        place-self: start;
+                    }
+
+                    .platillos__name {
+                        @include index.namePlatillosSettings;
+                    }
+
+                    .platillos__paragraph {
+                        @include index.paragraphPlatillosSettings;
+                    }
+
+                    .platillos__btn {
+                        @include index.buttonPlatillosSettings;
+
+                        &:active {
+                            transform: scale(0.93);
+                            transition: 100ms transform ease-in-out;
+                        }
+
+                    }
+
+                    @include index.setGritItem(1, 1, 2, 1, 2);
+                    @include index.setGritItem(2, 2, 3, 2, 3);
+                    @include index.setGritItem(3, 1, 2, 3, 4);
+
+                }
+
+                .platillos__figure {
+                    width: 75%;
+                    height: 100%;
+
+                    &:nth-of-type(odd) {
+                        place-self: start;
+                    }
+
+                    &:nth-of-type(even) {
+                        place-self: end;
+                    }
+
+                    .platillos__img {
+                        width: 100%;
+                        height: 250px;
+                        display: block;
+                        object-fit: cover;
+                        object-position: center;
+                        border-radius: 10px;
+                    }
+
+                    @include index.setGritItem(1, 2, 3, 1, 2);
+                    @include index.setGritItem(2, 1, 2, 2, 3);
+                    @include index.setGritItem(3, 2, 3, 3, 4);
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .cafe {
+        height: auto;
+        
+        .cafe__container {
+            min-height: 450px;
+            font-family: index.$roboto;
+
+            .cafe__title {
+                @include index.titleSettings;
+            }
+
+            .cafe__cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+                grid-auto-rows: max-content;
+                place-items: center;
+
+                .cafe__card {
+                    width: 270px;
+                    height: 100%;
+
+                    .cafe__img {
+                        width: 100%;
+                        height: 210px;
+                        display: block;
+                        object-fit: cover;
+                        border-radius: 10px;
+                    }
+
+                    .cafe__caption {
+                        @include index.nameSettings;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+    .contacto {
+        height: auto;
+        background-color: index.$color_secundario_4;
+
+        .contacto__container {
+            min-height: 500px;
+            font-family: index.$roboto;
+
+            .contacto__title {
+                @include index.titleSettings;
+            }
+
+            .contacto__cards {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-auto-rows: max-content;
+                place-items: center;
+
+                .contacto__form {
+                    width: 80%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    gap: 15px;
+                    font-family: index.$roboto;
+
+                    .correo__container {
+                        font-family: index.$roboto;
+                        position: relative;
+
+                        .correo__input {
+                            display: block;
+                            width: 100%;
+                            padding: 15px 15px 15px 10px;
+                            outline: none;
+                            background: none;
+                            border-bottom: 1px solid gray;
+                            @include index.fontsInputs;
+                        }
+
+                        .correo__label {
+                            position: absolute;
+                            top: 15px;
+                            left: 10px;
+                            right: 15px;
+                            color: black;
+                            pointer-events: none;
+                        }
+
+                        .correo__span {
+                            @include index.spanSettings;
+                        }
+
+                    }
+
+                    .mensaje__container {
+                        font-family: index.$roboto;
+                        position: relative;
+
+                        .mensaje__textarea {
+                            display: block;
+                            width: 100%;
+                            height: 150px;
+                            padding: 15px 15px 15px 10px;
+                            outline: none;
+                            background: none;
+                            border-bottom: 1px solid gray;
+                            @include index.fontsInputs;
+                            resize: none
+                        }
+
+                        .mensaje__label {
+                            position: absolute;
+                            top: 15px;
+                            left: 10px;
+                            right: 15px;
+                            color: black;
+                            pointer-events: none;
+                        }
+
+                        .mensaje__span {
+                            @include index.spanSettings;
+                        }
+
+                    }
+
+                    .contacto__button {
+                        @include index.buttonPlatillosSettings;
+                    }
+
+                }
+
+                .contacto__maps {
+                    width: 80%;
+                    height: 100%;
+
+                    .contacto__iframe {
+
+                    }
+
+                }
+
             }
 
         }

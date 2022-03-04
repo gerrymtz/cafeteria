@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 /* Colores Principales */
 /*Colores Secundarios*/
 *,
@@ -25,18 +25,20 @@ body {
   max-width: 1300px;
   margin: 0 auto;
   overflow: hidden;
-  padding: 60px 0;
+  padding: 40px 0;
   outline: 2px solid red;
 }
 
 .header {
   height: 100vh;
+  padding-top: 0.1px;
 }
 .header .header__nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
   height: 90px;
   background-color: white;
   font-family: "Roboto", sans-serif;
@@ -56,7 +58,7 @@ body {
 .header .header__nav .header__container .nav__logo .nav__name {
   text-decoration: none;
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 500;
   color: #284148;
 }
 .header .header__nav .header__container .nav__logo .nav__figure {
@@ -81,7 +83,7 @@ body {
 .header .header__nav .header__container .nav__menu .menu__item .menu__link {
   text-decoration: none;
   color: #284148;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 400;
 }
 .header .header__main {
@@ -102,10 +104,365 @@ body {
   color: white;
   font-family: "Roboto", sans-serif;
   font-size: 64px;
-  font-weight: 400;
+  font-weight: 500;
   padding: 20px 50px;
   letter-spacing: 3px;
+  border-radius: 10px;
+}
+
+.main .bebidas {
+  background-color: #F2DCD4;
+  height: auto;
+  padding-top: 0.1px;
+}
+.main .bebidas .bebidas__container {
+  min-height: 480px;
+  margin-top: 90px;
+  font-family: "Roboto", sans-serif;
+}
+.main .bebidas .bebidas__container .bebidas__title {
+  color: #284148;
+  font-size: 46px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.main .bebidas .bebidas__container .bebidas__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: max-content;
+  place-items: center;
+}
+.main .bebidas .bebidas__container .bebidas__cards .bebidas__card {
+  width: 80%;
+  height: 100%;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 200ms transform ease-in-out;
+}
+.main .bebidas .bebidas__container .bebidas__cards .bebidas__card .bebidas__img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.main .bebidas .bebidas__container .bebidas__cards .bebidas__card .bebidas__name {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #517E78;
+  font-weight: 500;
+}
+.main .bebidas .bebidas__container .bebidas__cards .bebidas__card .bebidas__price {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+.main .bebidas .bebidas__container .bebidas__cards .bebidas__card:hover {
+  transform: scale(1.2);
+  transition: 400ms transform ease-in-out;
+}
+.main .desayunos {
+  height: auto;
+  padding-top: 0.1px;
+}
+.main .desayunos .desayunos__container {
+  min-height: 480px;
+  margin-top: 90px;
+  font-family: "Roboto", sans-serif;
+}
+.main .desayunos .desayunos__container .desayunos__title {
+  color: #284148;
+  font-size: 46px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.main .desayunos .desayunos__container .desayunos__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: max-content;
+  place-items: center;
+}
+.main .desayunos .desayunos__container .desayunos__cards .desayunos__card {
+  width: 70%;
+  height: 100%;
+  cursor: pointer;
+  transform: translateY(0);
+  transition: 200ms transform ease-in-out;
+}
+.main .desayunos .desayunos__container .desayunos__cards .desayunos__card .desayunos__img {
+  width: 100%;
+  height: 200px;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.main .desayunos .desayunos__container .desayunos__cards .desayunos__card .desayunos__name {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #517E78;
+  font-weight: 500;
+}
+.main .desayunos .desayunos__container .desayunos__cards .desayunos__card .desayunos__price {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+.main .desayunos .desayunos__container .desayunos__cards .desayunos__card:hover {
+  transform: translateY(-20%);
+  transition: 400ms transform ease-in-out;
+}
+.main .platillos {
+  height: auto;
+  padding-top: 0.1px;
+  background-color: #FEFDF3;
+}
+.main .platillos .platillos__container {
+  min-height: 100vh;
+  margin-top: 90px;
+  font-family: "Roboto", sans-serif;
+}
+.main .platillos .platillos__container .platillos__title {
+  color: #284148;
+  font-size: 46px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.main .platillos .platillos__container .platillos__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  grid-auto-rows: max-content;
+  gap: 35px;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts {
+  width: 70%;
+  height: 100%;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts:nth-of-type(odd) {
+  place-self: end;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts:nth-of-type(even) {
+  place-self: start;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts .platillos__name {
+  color: #517E78;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts .platillos__paragraph {
+  color: #284148;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts .platillos__btn {
+  background-color: #D88260;
+  width: 200px;
+  height: 50px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
   border-radius: 5px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 100ms transform ease-in-out;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts .platillos__btn:active {
+  transform: scale(0.93);
+  transition: 100ms transform ease-in-out;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts:nth-of-type(1) {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts:nth-of-type(2) {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts:nth-of-type(3) {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__figure {
+  width: 75%;
+  height: 100%;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__figure:nth-of-type(odd) {
+  place-self: start;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__figure:nth-of-type(even) {
+  place-self: end;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__figure .platillos__img {
+  width: 100%;
+  height: 250px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__figure:nth-of-type(1) {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__figure:nth-of-type(2) {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__figure:nth-of-type(3) {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+.main .cafe {
+  height: auto;
+}
+.main .cafe .cafe__container {
+  min-height: 450px;
+  font-family: "Roboto", sans-serif;
+}
+.main .cafe .cafe__container .cafe__title {
+  color: #284148;
+  font-size: 46px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.main .cafe .cafe__container .cafe__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-auto-rows: max-content;
+  place-items: center;
+}
+.main .cafe .cafe__container .cafe__cards .cafe__card {
+  width: 270px;
+  height: 100%;
+}
+.main .cafe .cafe__container .cafe__cards .cafe__card .cafe__img {
+  width: 100%;
+  height: 210px;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.main .cafe .cafe__container .cafe__cards .cafe__card .cafe__caption {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #517E78;
+  font-weight: 500;
+}
+.main .contacto {
+  height: auto;
+  background-color: #F2DCD4;
+}
+.main .contacto .contacto__container {
+  min-height: 500px;
+  font-family: "Roboto", sans-serif;
+}
+.main .contacto .contacto__container .contacto__title {
+  color: #284148;
+  font-size: 46px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.main .contacto .contacto__container .contacto__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: max-content;
+  place-items: center;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 15px;
+  font-family: "Roboto", sans-serif;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .correo__container {
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__input {
+  display: block;
+  width: 100%;
+  padding: 15px 15px 15px 10px;
+  outline: none;
+  background: none;
+  border-bottom: 1px solid gray;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: grey;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__label {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  right: 15px;
+  color: black;
+  pointer-events: none;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: aqua;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container {
+  font-family: "Roboto", sans-serif;
+  position: relative;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__textarea {
+  display: block;
+  width: 100%;
+  height: 150px;
+  padding: 15px 15px 15px 10px;
+  outline: none;
+  background: none;
+  border-bottom: 1px solid gray;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: grey;
+  resize: none;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__label {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  right: 15px;
+  color: black;
+  pointer-events: none;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: aqua;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .contacto__button {
+  background-color: #D88260;
+  width: 200px;
+  height: 50px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 100ms transform ease-in-out;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__maps {
+  width: 80%;
+  height: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */
