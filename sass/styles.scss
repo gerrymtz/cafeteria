@@ -325,8 +325,10 @@ body {
 
     .cafe {
         height: auto;
+        padding-top: 0.1px;
         
         .cafe__container {
+            margin-top: index.$height_navbar;
             min-height: 450px;
             font-family: index.$roboto;
 
@@ -371,28 +373,27 @@ body {
         .contacto__container {
             min-height: 500px;
             font-family: index.$roboto;
+            display: flex;
+            flex-direction: column;
 
             .contacto__title {
                 @include index.titleSettings;
             }
 
             .contacto__cards {
+                flex: 1;
                 display: grid;
                 grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                 grid-auto-rows: max-content;
                 place-items: center;
 
                 .contacto__form {
-                    width: 80%;
-                    height: 100%;
+                    width: 60%;
                     display: flex;
                     flex-direction: column;
-                    justify-content: space-evenly;
-                    gap: 15px;
-                    font-family: index.$roboto;
+                    gap: 40px;
 
                     .correo__container {
-                        font-family: index.$roboto;
                         position: relative;
 
                         .correo__input {
@@ -400,9 +401,35 @@ body {
                             width: 100%;
                             padding: 15px 15px 15px 10px;
                             outline: none;
-                            background: none;
-                            border-bottom: 1px solid gray;
+                            background-color: transparent;
+                            border-bottom: 1px solid index.$color_secundario_1;
                             @include index.fontsInputs;
+                            color: index.$color_principal_1;
+
+                            &:focus {
+
+                                + .correo__label {
+                                    transform: translateY(-35px) scale(0.7);
+                                    transition: 400ms transform ease-in, 200ms color ease-in;
+                                    color: index.$color_principal_1;
+                                    transform-origin: left;
+                                }
+
+                                ~ .correo__span {
+                                    transform: scale(1);
+                                    transform-origin: left;
+                                    transition: 400ms transform ease-in;
+                                }
+
+                            }
+
+                            &:not(:placeholder-shown) + .correo__label {
+                                transform: translateY(-35px) scale(0.7);
+                                transition: 400ms all ease-in, 200ms color ease-in;
+                                color: index.$color_principal_1;
+                                transform-origin: left;
+                            }
+
                         }
 
                         .correo__label {
@@ -410,8 +437,12 @@ body {
                             top: 15px;
                             left: 10px;
                             right: 15px;
-                            color: black;
+                            @include index.fontsInputs;
+                            color: index.$color_secundario_1;
                             pointer-events: none;
+                            transform: translateY(0) scale(1);
+                            transform-origin: left;
+                            transition: 200ms all ease-in;
                         }
 
                         .correo__span {
@@ -421,19 +452,44 @@ body {
                     }
 
                     .mensaje__container {
-                        font-family: index.$roboto;
                         position: relative;
 
                         .mensaje__textarea {
+                            resize: none;
                             display: block;
                             width: 100%;
-                            height: 150px;
-                            padding: 15px 15px 15px 10px;
+                            height: 120px;
+                            background-color: transparent;
                             outline: none;
-                            background: none;
-                            border-bottom: 1px solid gray;
+                            padding: 15px 15px 15px 10px;
+                            border-bottom: 1px solid index.$color_secundario_1;
                             @include index.fontsInputs;
-                            resize: none
+                            color: index.$color_principal_1;
+
+                            &:focus {
+
+                                + .mensaje__label {
+                                    transform: translateY(-35px) scale(0.7);
+                                    transition: 400ms transform ease-in, 200ms color ease-in;
+                                    color: index.$color_principal_1;
+                                    transform-origin: left;
+                                }
+
+                                ~ .mensaje__span {
+                                    transform: scale(1);
+                                    transform-origin: left;
+                                    transition: 400ms transform ease-in;
+                                }
+
+                            }
+
+                            &:not(:placeholder-shown) + .mensaje__label {
+                                transform: translateY(-35px) scale(0.7);
+                                transition: 400ms transform ease-in, 200ms color ease-in;
+                                color: index.$color_principal_1;
+                                transform-origin: left;
+                            }
+
                         }
 
                         .mensaje__label {
@@ -441,8 +497,12 @@ body {
                             top: 15px;
                             left: 10px;
                             right: 15px;
-                            color: black;
+                            @include index.fontsInputs;
+                            color: index.$color_secundario_1;
                             pointer-events: none;
+                            transform: translateY(0) scale(1);
+                            transform-origin: left;
+                            transition: 200ms all ease-in;
                         }
 
                         .mensaje__span {
@@ -458,11 +518,12 @@ body {
                 }
 
                 .contacto__maps {
-                    width: 80%;
+                    width: 90%;
                     height: 100%;
 
                     .contacto__iframe {
-
+                        width: 100%;
+                        height: 100%;
                     }
 
                 }
@@ -473,4 +534,8 @@ body {
 
     }
 
+}
+
+.footer {
+    
 }
