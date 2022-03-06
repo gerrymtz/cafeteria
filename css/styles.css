@@ -26,7 +26,6 @@ body {
   margin: 0 auto;
   overflow: hidden;
   padding: 40px 0;
-  outline: 2px solid red;
 }
 
 .header {
@@ -375,7 +374,6 @@ body {
   margin-bottom: 30px;
 }
 .main .contacto .contacto__container .contacto__cards {
-  flex: 1;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-auto-rows: max-content;
@@ -396,27 +394,30 @@ body {
   padding: 15px 15px 15px 10px;
   outline: none;
   background-color: transparent;
-  border-bottom: 1px solid #D88260;
+  border-bottom: 1px solid #517E78;
+  color: #517E78;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__input:focus {
   color: #284148;
 }
 .main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__input:focus + .correo__label {
-  transform: translateY(-35px) scale(0.7);
-  transition: 400ms transform ease-in, 200ms color ease-in;
   color: #284148;
+  transform: translateY(-30px) scale(0.7);
+  transition: 400ms all ease-in;
   transform-origin: left;
 }
 .main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__input:focus ~ .correo__span {
   transform: scale(1);
-  transform-origin: left;
   transition: 400ms transform ease-in;
+  transform-origin: left;
 }
 .main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__input:not(:placeholder-shown) + .correo__label {
-  transform: translateY(-35px) scale(0.7);
-  transition: 400ms all ease-in, 200ms color ease-in;
   color: #284148;
+  transform: translateY(-30px) scale(0.7);
+  transition: 400ms all ease-in;
   transform-origin: left;
 }
 .main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__label {
@@ -424,14 +425,14 @@ body {
   top: 15px;
   left: 10px;
   right: 15px;
+  pointer-events: none;
+  color: #517E78;
+  transform: translateY(0) scale(1);
+  transition: 200ms transform ease-in;
+  transform-origin: left;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #D88260;
-  pointer-events: none;
-  transform: translateY(0) scale(1);
-  transform-origin: left;
-  transition: 200ms all ease-in;
 }
 .main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__span {
   position: absolute;
@@ -451,48 +452,51 @@ body {
 }
 .main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__textarea {
   resize: none;
-  display: block;
-  width: 100%;
   height: 120px;
-  background-color: transparent;
-  outline: none;
-  padding: 15px 15px 15px 10px;
-  border-bottom: 1px solid #D88260;
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  padding: 15px 15px 15px 10px;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid #517E78;
+  color: #517E78;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__textarea:focus {
   color: #284148;
 }
 .main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__textarea:focus + .mensaje__label {
-  transform: translateY(-35px) scale(0.7);
-  transition: 400ms transform ease-in, 200ms color ease-in;
   color: #284148;
+  transform: translateY(-30px) scale(0.7);
   transform-origin: left;
+  transition: 400ms all ease-in;
 }
 .main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__textarea:focus ~ .mensaje__span {
   transform: scale(1);
-  transform-origin: left;
   transition: 400ms transform ease-in;
+  transform-origin: left;
 }
 .main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__textarea:not(:placeholder-shown) + .mensaje__label {
-  transform: translateY(-35px) scale(0.7);
-  transition: 400ms transform ease-in, 200ms color ease-in;
   color: #284148;
+  transform: translateY(-30px) scale(0.7);
   transform-origin: left;
+  transition: 400ms all ease-in;
 }
 .main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__label {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
   position: absolute;
   top: 15px;
   left: 10px;
   right: 15px;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  color: #D88260;
   pointer-events: none;
+  color: #517E78;
   transform: translateY(0) scale(1);
+  transition: 200ms transform ease-in;
   transform-origin: left;
-  transition: 200ms all ease-in;
 }
 .main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__span {
   position: absolute;
@@ -527,6 +531,41 @@ body {
 .main .contacto .contacto__container .contacto__cards .contacto__maps .contacto__iframe {
   width: 100%;
   height: 100%;
+}
+
+.footer {
+  height: auto;
+  background-color: #284148;
+}
+.footer .footer__container {
+  min-height: 125px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .footer__container .footer__info .footer__advice {
+  font-size: 14px;
+  font-weight: 400;
+}
+.footer .footer__container .footer__info .footer__terms {
+  font-size: 14px;
+  font-weight: 400;
+}
+.footer .footer__container .footer__info .footer__copyright {
+  font-size: 14px;
+  font-weight: 400;
+}
+.footer .footer__container .footer__email {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+}
+.footer .footer__container .footer__email .footer__link {
+  color: white;
+  text-decoration: none;
 }
 
 /*# sourceMappingURL=styles.css.map */
