@@ -26,7 +26,6 @@
     margin: 0 auto;
     overflow: hidden;
     padding: variables.$padding_container;
-    //outline: 2px solid red;
 }
 
 @mixin setHeightMarginTop {
@@ -72,6 +71,7 @@
 
 @mixin buttonPlatillosSettings {
     background-color: colores.$color_secundario_1;
+    display: block;
     width: 200px;
     height: 50px;
     color: white;

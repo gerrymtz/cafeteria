@@ -32,12 +32,22 @@ body {
         background-color: white;
         font-family: index.$roboto;
 
+        @media screen and (max-width: 425px) {
+            height: index.$height_navbar_mediaQuerie425;
+        }
+
         .header__container {
             height: 100%;
             padding: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+
+            @media screen and (max-width: 425px) {
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items: center;
+            }
 
             .nav__logo {
                 display: flex;
@@ -49,12 +59,22 @@ body {
                     font-size: index.$roboto24;
                     font-weight: index.$robotoW500;
                     color: index.$color_principal_1;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+
                 }
 
                 .nav__figure {
                     width: 60px;
                     height: 60px;
                     order: -1;
+
+                    @media screen and (max-width: 425px) {
+                        width: 30px;
+                        height: 30px;
+                    }
 
                     .nav__img {
                         width: 100%;
@@ -68,11 +88,33 @@ body {
             }
 
             .nav__menu {
+                display: flex;
+                justify-content: space-evenly;
+                gap: 15px;
+
+                @media screen and (max-width: 425px) {
+                    display: flex;
+                    justify-content: space-evenly;
+                    flex-wrap: wrap;
+                    row-gap: 10px;
+                }
 
                 .menu__item {
                     list-style-type: none;
-                    display: inline;
-                    margin-right: 25px;
+                    background-color: transparent;
+                    padding: 10px 25px;
+                    border-radius: 5px;
+                    transition: 300ms all ease-in;
+
+                    @media screen and (max-width: 768px) {
+                        padding: 0;
+                        border-radius: 0;
+                    }
+
+                    @media screen and (max-width: 425px) {
+                        margin-right: 0;
+                        padding: 0 10px;
+                    }
 
                     &:last-child {
                         margin-right: 0;
@@ -83,6 +125,16 @@ body {
                         color: index.$color_principal_1;
                         font-size: index.$roboto14;
                         font-weight: index.$robotoW400;
+                    }
+
+                    &:hover {
+                        background-color: index.$color_secundario_1;
+                        transition: 200ms all ease-in;
+
+                        .menu__link {
+                            color: white;
+                        }
+
                     }
 
                 }
@@ -100,6 +152,11 @@ body {
         background-size: cover;
         background-attachment: fixed;
 
+        @media screen and (max-width: 425px) {
+            margin-top: index.$height_navbar_mediaQuerie425;
+            height: calc(100% - index.$height_navbar_mediaQuerie425);
+        }
+
         .header__container {
             height: 100%;
             display: flex;
@@ -114,6 +171,14 @@ body {
                 padding: 20px 50px;
                 letter-spacing: 3px;
                 border-radius: 10px;
+
+                @media screen and (max-width: 425px) {
+                    padding: 10px 20px;
+                    letter-spacing: 1px;
+                    width: 100%;
+                    text-align: center;
+                }
+
             }
 
         }
@@ -134,15 +199,23 @@ body {
             margin-top: index.$height_navbar;
             font-family: index.$roboto;
 
+            @media screen and (max-width: 425px) {
+                margin-top: index.$height_navbar_mediaQuerie425;
+            }
+
             .bebidas__title {
                 @include index.titleSettings;
             }
 
             .bebidas__cards {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 grid-auto-rows: max-content;
                 place-items: center;
+
+                @media screen and (max-width: 768px) {
+                    row-gap: 30px;
+                }
 
                 .bebidas__card {
                     width: 80%;
@@ -150,6 +223,14 @@ body {
                     cursor: pointer;
                     transform: scale(1);
                     transition: 200ms transform ease-in-out;
+
+                    @media screen and (max-width: 768px) {
+                        width: 90%;
+                    }
+
+                    @media screen and (max-width: 425px) {
+                        width: 100%;
+                    }
 
                     .bebidas__img {
                         width: 100%;
@@ -187,6 +268,10 @@ body {
             min-height: 480px;
             margin-top: index.$height_navbar;
             font-family: index.$roboto;
+
+            @media screen and (max-width: 425px) {
+                margin-top: index.$height_navbar_mediaQuerie425;
+            }
     
             .desayunos__title {
                 @include index.titleSettings;
@@ -194,9 +279,13 @@ body {
     
             .desayunos__cards {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 grid-auto-rows: max-content;
                 place-items: center;
+
+                @media screen and (max-width: 768px) {
+                    row-gap: 30px;
+                }
     
                 .desayunos__card {
                     width: 70%;
@@ -204,13 +293,26 @@ body {
                     cursor: pointer;
                     transform: translateY(0);
                     transition: 200ms transform ease-in-out;
+
+                    @media screen and (max-width: 768px) {
+                        width: 90%;
+                    }
+
+                    @media screen and (max-width: 425px) {
+                        width: 100%;
+                    }
     
                     .desayunos__img {
                         width: 100%;
                         height: 200px;
                         display: block;
                         object-fit: cover;
-                        border-radius: 10px
+                        border-radius: 10px;
+
+                        @media screen and (max-width: 768px) {
+                            height: 300px;
+                        }
+
                     }
     
                     .desayunos__name {
@@ -244,6 +346,10 @@ body {
             margin-top: index.$height_navbar;
             font-family: index.$roboto;
 
+            @media screen and (max-width: 425px) {
+                margin-top: index.$height_navbar_mediaQuerie425;
+            }
+
             .platillos__title {
                 @include index.titleSettings;
             }
@@ -253,6 +359,11 @@ body {
                 grid-template-columns: repeat(2, minmax(300px, 1fr));
                 grid-auto-rows: max-content;
                 gap: 35px;
+
+                @media screen and (max-width: 425px) {
+                    grid-template-columns: 1fr;
+                    grid-auto-rows: max-content;
+                }
 
                 .platillos__texts {
                     width: 70%;
@@ -277,6 +388,10 @@ body {
                     .platillos__btn {
                         @include index.buttonPlatillosSettings;
 
+                        @media screen and (max-width: 425px) {
+                            margin: 0 auto;
+                        }
+
                         &:active {
                             transform: scale(0.93);
                             transition: 100ms transform ease-in-out;
@@ -287,6 +402,17 @@ body {
                     @include index.setGritItem(1, 1, 2, 1, 2);
                     @include index.setGritItem(2, 2, 3, 2, 3);
                     @include index.setGritItem(3, 1, 2, 3, 4);
+
+                    @media screen and (max-width: 768px) {
+                        width: 100%;
+                    }
+
+                    @media screen and (max-width: 425px) {
+                        width: 100%;
+                        @include index.setGritItem(1, 1, 2, 1, 2);
+                        @include index.setGritItem(2, 1, 2, 3, 4);
+                        @include index.setGritItem(3, 1, 2, 5, 6);
+                    }
 
                 }
 
@@ -315,6 +441,17 @@ body {
                     @include index.setGritItem(2, 1, 2, 2, 3);
                     @include index.setGritItem(3, 2, 3, 3, 4);
 
+                    @media screen and (max-width: 768px) {
+                        width: 100%;
+                    }
+
+                    @media screen and (max-width: 425px) {
+                        width: 100%;
+                        @include index.setGritItem(1, 1, 2, 2, 3);
+                        @include index.setGritItem(2, 1, 2, 4, 5);
+                        @include index.setGritItem(3, 1, 2, 6, 7);
+                    }
+
                 }
 
             }
@@ -332,19 +469,35 @@ body {
             min-height: 450px;
             font-family: index.$roboto;
 
+            @media screen and (max-width: 425px) {
+                margin-top: index.$height_navbar_mediaQuerie425;
+            }
+
             .cafe__title {
                 @include index.titleSettings;
             }
 
             .cafe__cards {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
                 grid-auto-rows: max-content;
                 place-items: center;
 
+                @media screen and (max-width: 768px) {
+                    row-gap: 30px;
+                }
+
                 .cafe__card {
-                    width: 270px;
+                    width: 70%;
                     height: 100%;
+
+                    @media screen and (max-width: 768px) {
+                        width: 90%;
+                    }
+
+                    @media screen and (max-width: 425px) {
+                        width: 100%;
+                    }
 
                     .cafe__img {
                         width: 100%;
@@ -368,13 +521,19 @@ body {
 
     .contacto {
         height: auto;
+        padding-top: 0.1px;
         background-color: index.$color_secundario_4;
 
         .contacto__container {
+            margin-top: index.$height_navbar;
             min-height: 500px;
             font-family: index.$roboto;
             display: flex;
             flex-direction: column;
+
+            @media screen and (max-width: 425px) {
+                margin-top: index.$height_navbar_mediaQuerie425;
+            }
 
             .contacto__title {
                 @include index.titleSettings;
@@ -386,11 +545,25 @@ body {
                 grid-auto-rows: max-content;
                 place-items: center;
 
+                @media screen and (max-width: 768px) {
+                    grid-template-columns: 1fr;
+                    grid-template-rows: max-content max-content;
+                    gap: 40px;
+                }
+
                 .contacto__form {
                     width: 60%;
                     display: flex;
                     flex-direction: column;
                     gap: 40px;
+
+                    @media screen and (max-width: 768px) {
+                        width: 70%;
+                    }
+
+                    @media screen and (max-width: 425px) {
+                        width: 90%;
+                    }
 
                     .correo__container {
                         position: relative;
@@ -494,6 +667,15 @@ body {
                     width: 90%;
                     height: 100%;
 
+                    @media screen and (max-width: 768px) {
+                        width: 70%;
+                        height: 400px;
+                    }
+
+                    @media screen and (max-width: 425px) {
+                        width: 90%;
+                    }
+
                     .contacto__iframe {
                         width: 100%;
                         height: 100%;
@@ -521,6 +703,12 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media screen and (max-width: 425px) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            gap: 20px;
+        }
 
         .footer__info {
 
