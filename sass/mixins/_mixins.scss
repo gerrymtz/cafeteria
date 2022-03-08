@@ -82,6 +82,12 @@
     cursor: pointer;
     transform: scale(1);
     transition: 100ms transform ease-in-out;
+
+    &:active {
+        transform: scale(0.93);
+        transition: 100ms transform ease-in-out;
+    }
+
 }
 
 @mixin setGritItem($positionElement, $columnStart, $columnEnd, $rowStart, $rowEnd) {

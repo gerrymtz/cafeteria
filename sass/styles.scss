@@ -133,6 +133,7 @@ body {
 
                         .menu__link {
                             color: white;
+                            font-weight: index.$robotoW500;
                         }
 
                     }
@@ -214,15 +215,12 @@ body {
                 place-items: center;
 
                 @media screen and (max-width: 768px) {
-                    row-gap: 30px;
+                    row-gap: 50px;
                 }
 
                 .bebidas__card {
                     width: 80%;
                     height: 100%;
-                    cursor: pointer;
-                    transform: scale(1);
-                    transition: 200ms transform ease-in-out;
 
                     @media screen and (max-width: 768px) {
                         width: 90%;
@@ -237,6 +235,14 @@ body {
                         display: block;
                         object-fit: cover;
                         border-radius: 10px;
+                        transform: scale(1);
+                        transition: 200ms transform ease-in;
+
+                        &:hover {
+                            transform: scale(1.15);
+                            transition: 300ms transform ease-in;
+                        }
+
                     }
 
                     .bebidas__name {
@@ -247,9 +253,10 @@ body {
                         @include index.priceSettings;
                     }
 
-                    &:hover {
-                        transform: scale(1.2);
-                        transition: 400ms transform ease-in-out;
+                    .bebidas__button {
+                        @include index.buttonPlatillosSettings;
+                        width: 100%;
+                        margin-top: 15px;
                     }
 
                 }
@@ -284,15 +291,12 @@ body {
                 place-items: center;
 
                 @media screen and (max-width: 768px) {
-                    row-gap: 30px;
+                    row-gap: 50px;
                 }
     
                 .desayunos__card {
                     width: 70%;
                     height: 100%;
-                    cursor: pointer;
-                    transform: translateY(0);
-                    transition: 200ms transform ease-in-out;
 
                     @media screen and (max-width: 768px) {
                         width: 90%;
@@ -308,9 +312,16 @@ body {
                         display: block;
                         object-fit: cover;
                         border-radius: 10px;
+                        transform: translateY(0);
+                        transition: 200ms transform ease-in;
 
                         @media screen and (max-width: 768px) {
                             height: 300px;
+                        }
+
+                        &:hover {
+                            transform: translateY(-30px);
+                            transition: 300ms transform ease-in;
                         }
 
                     }
@@ -323,11 +334,12 @@ body {
                         @include index.priceSettings;
                     }
 
-                    &:hover {
-                        transform: translateY(-20%);
-                        transition: 400ms transform ease-in-out;
+                    .desayunos__button {
+                        @include index.buttonPlatillosSettings;
+                        margin-top: 15px;
+                        width: 100%;
                     }
-    
+
                 }
     
             }
@@ -390,11 +402,6 @@ body {
 
                         @media screen and (max-width: 425px) {
                             margin: 0 auto;
-                        }
-
-                        &:active {
-                            transform: scale(0.93);
-                            transition: 100ms transform ease-in-out;
                         }
 
                     }
