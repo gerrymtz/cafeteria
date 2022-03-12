@@ -1,6 +1,6 @@
-@use "../partials/variables";
-@use "../partials/colores";
-@use "../partials/fonts";
+@use "../partial/colores";
+@use "../partial/fonts";
+@use "../partial/variables";
 
 
 @mixin resetSettings {

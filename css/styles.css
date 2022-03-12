@@ -1,19 +1,852 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @use "../partials/variables";
- *   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   sass\mixins\_mixins.scss 1:1  @forward
- *   sass\index\_index.scss 1:1    @use
- *   sass\styles.scss 1:1          root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @use \"../partials/variables\";\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   sass\\mixins\\_mixins.scss 1:1  @forward\a   sass\\index\\_index.scss 1:1    @use\a   sass\\styles.scss 1:1          root stylesheet";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+/* Colores Principales */
+/*Colores Secundarios*/
+*,
+::after,
+::before {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.header {
+  height: 100vh;
+  padding-top: 0.1px;
+}
+.header .header__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 90px;
+  background-color: white;
+  font-family: "Roboto", sans-serif;
+}
+@media screen and (max-width: 425px) {
+  .header .header__nav {
+    height: 130px;
+  }
+}
+.header .header__nav .header__container {
+  height: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 425px) {
+  .header .header__nav .header__container {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
+.header .header__nav .header__container .nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.header .header__nav .header__container .nav__logo .nav__name {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: 500;
+  color: #284148;
+}
+.header .header__nav .header__container .nav__logo .nav__name:hover {
+  text-decoration: underline;
+}
+.header .header__nav .header__container .nav__logo .nav__figure {
+  width: 60px;
+  height: 60px;
+  order: -1;
+}
+@media screen and (max-width: 425px) {
+  .header .header__nav .header__container .nav__logo .nav__figure {
+    width: 30px;
+    height: 30px;
+  }
+}
+.header .header__nav .header__container .nav__logo .nav__figure .nav__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.header .header__nav .header__container .nav__menu {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 15px;
+}
+@media screen and (max-width: 425px) {
+  .header .header__nav .header__container .nav__menu {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+}
+.header .header__nav .header__container .nav__menu .menu__item {
+  list-style-type: none;
+  background-color: transparent;
+  padding: 10px 25px;
+  border-radius: 5px;
+  transition: 300ms all ease-in;
+}
+@media screen and (max-width: 768px) {
+  .header .header__nav .header__container .nav__menu .menu__item {
+    padding: 0;
+    border-radius: 0;
+  }
+}
+@media screen and (max-width: 425px) {
+  .header .header__nav .header__container .nav__menu .menu__item {
+    margin-right: 0;
+    padding: 0 10px;
+  }
+}
+.header .header__nav .header__container .nav__menu .menu__item:last-child {
+  margin-right: 0;
+}
+.header .header__nav .header__container .nav__menu .menu__item .menu__link {
+  text-decoration: none;
+  color: #284148;
+  font-size: 14px;
+  font-weight: 400;
+}
+.header .header__nav .header__container .nav__menu .menu__item:hover {
+  background-color: #D88260;
+  transition: 200ms all ease-in;
+}
+.header .header__nav .header__container .nav__menu .menu__item:hover .menu__link {
+  color: white;
+  font-weight: 500;
+}
+.header .header__main {
+  height: calc(100% - 90px);
+  margin-top: 90px;
+  background-image: url(../assets/images/header_background.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+@media screen and (max-width: 425px) {
+  .header .header__main {
+    margin-top: 130px;
+    height: calc(100% - 130px);
+  }
+}
+.header .header__main .header__container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.header .header__main .header__container .header__text {
+  background-color: #D88260;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 64px;
+  font-weight: 500;
+  padding: 20px 50px;
+  letter-spacing: 3px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 425px) {
+  .header .header__main .header__container .header__text {
+    padding: 10px 20px;
+    letter-spacing: 1px;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+.main .bebidas {
+  background-color: #F2DCD4;
+  height: auto;
+  padding-top: 0.1px;
+}
+.main .bebidas .bebidas__container {
+  min-height: 480px;
+  margin-top: 90px;
+  font-family: "Roboto", sans-serif;
+}
+@media screen and (max-width: 425px) {
+  .main .bebidas .bebidas__container {
+    margin-top: 130px;
+  }
+}
+.main .bebidas .bebidas__container .bebidas__title {
+  color: #284148;
+  font-size: 46px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.main .bebidas .bebidas__container .bebidas__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: max-content;
+  place-items: center;
+}
+@media screen and (max-width: 768px) {
+  .main .bebidas .bebidas__container .bebidas__cards {
+    row-gap: 50px;
+  }
+}
+.main .bebidas .bebidas__container .bebidas__cards .bebidas__card {
+  width: 80%;
+  height: 100%;
+}
+@media screen and (max-width: 768px) {
+  .main .bebidas .bebidas__container .bebidas__cards .bebidas__card {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .main .bebidas .bebidas__container .bebidas__cards .bebidas__card {
+    width: 100%;
+  }
+}
+.main .bebidas .bebidas__container .bebidas__cards .bebidas__card .bebidas__img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+  transform: scale(1);
+  transition: 200ms transform ease-in;
+}
+.main .bebidas .bebidas__container .bebidas__cards .bebidas__card .bebidas__img:hover {
+  transform: scale(1.15);
+  transition: 300ms transform ease-in;
+}
+.main .bebidas .bebidas__container .bebidas__cards .bebidas__card .bebidas__name {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #517E78;
+  font-weight: 500;
+}
+.main .bebidas .bebidas__container .bebidas__cards .bebidas__card .bebidas__price {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+.main .bebidas .bebidas__container .bebidas__cards .bebidas__card .bebidas__button {
+  background-color: #D88260;
+  display: block;
+  width: 200px;
+  height: 50px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 100ms transform ease-in-out;
+  width: 100%;
+  margin-top: 15px;
+}
+.main .bebidas .bebidas__container .bebidas__cards .bebidas__card .bebidas__button:active {
+  transform: scale(0.93);
+  transition: 100ms transform ease-in-out;
+}
+.main .desayunos {
+  height: auto;
+  padding-top: 0.1px;
+}
+.main .desayunos .desayunos__container {
+  min-height: 480px;
+  margin-top: 90px;
+  font-family: "Roboto", sans-serif;
+}
+@media screen and (max-width: 425px) {
+  .main .desayunos .desayunos__container {
+    margin-top: 130px;
+  }
+}
+.main .desayunos .desayunos__container .desayunos__title {
+  color: #284148;
+  font-size: 46px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.main .desayunos .desayunos__container .desayunos__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: max-content;
+  place-items: center;
+}
+@media screen and (max-width: 768px) {
+  .main .desayunos .desayunos__container .desayunos__cards {
+    row-gap: 50px;
+  }
+}
+.main .desayunos .desayunos__container .desayunos__cards .desayunos__card {
+  width: 70%;
+  height: 100%;
+}
+@media screen and (max-width: 768px) {
+  .main .desayunos .desayunos__container .desayunos__cards .desayunos__card {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .main .desayunos .desayunos__container .desayunos__cards .desayunos__card {
+    width: 100%;
+  }
+}
+.main .desayunos .desayunos__container .desayunos__cards .desayunos__card .desayunos__img {
+  width: 100%;
+  height: 200px;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+  transform: translateY(0);
+  transition: 200ms transform ease-in;
+}
+@media screen and (max-width: 768px) {
+  .main .desayunos .desayunos__container .desayunos__cards .desayunos__card .desayunos__img {
+    height: 300px;
+  }
+}
+.main .desayunos .desayunos__container .desayunos__cards .desayunos__card .desayunos__img:hover {
+  transform: translateY(-30px);
+  transition: 300ms transform ease-in;
+}
+.main .desayunos .desayunos__container .desayunos__cards .desayunos__card .desayunos__name {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #517E78;
+  font-weight: 500;
+}
+.main .desayunos .desayunos__container .desayunos__cards .desayunos__card .desayunos__price {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+}
+.main .desayunos .desayunos__container .desayunos__cards .desayunos__card .desayunos__button {
+  background-color: #D88260;
+  display: block;
+  width: 200px;
+  height: 50px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 100ms transform ease-in-out;
+  margin-top: 15px;
+  width: 100%;
+}
+.main .desayunos .desayunos__container .desayunos__cards .desayunos__card .desayunos__button:active {
+  transform: scale(0.93);
+  transition: 100ms transform ease-in-out;
+}
+.main .platillos {
+  height: auto;
+  padding-top: 0.1px;
+  background-color: #FEFDF3;
+}
+.main .platillos .platillos__container {
+  min-height: 100vh;
+  margin-top: 90px;
+  font-family: "Roboto", sans-serif;
+}
+@media screen and (max-width: 425px) {
+  .main .platillos .platillos__container {
+    margin-top: 130px;
+  }
+}
+.main .platillos .platillos__container .platillos__title {
+  color: #284148;
+  font-size: 46px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.main .platillos .platillos__container .platillos__cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(300px, 1fr));
+  grid-auto-rows: max-content;
+  gap: 35px;
+}
+@media screen and (max-width: 425px) {
+  .main .platillos .platillos__container .platillos__cards {
+    grid-template-columns: 1fr;
+    grid-auto-rows: max-content;
+  }
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts {
+  width: 70%;
+  height: 100%;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts:nth-of-type(odd) {
+  place-self: end;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts:nth-of-type(even) {
+  place-self: start;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts .platillos__name {
+  color: #517E78;
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts .platillos__paragraph {
+  color: #284148;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts .platillos__btn {
+  background-color: #D88260;
+  display: block;
+  width: 200px;
+  height: 50px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 100ms transform ease-in-out;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts .platillos__btn:active {
+  transform: scale(0.93);
+  transition: 100ms transform ease-in-out;
+}
+@media screen and (max-width: 425px) {
+  .main .platillos .platillos__container .platillos__cards .platillos__texts .platillos__btn {
+    margin: 0 auto;
+  }
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts:nth-of-type(1) {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts:nth-of-type(2) {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__texts:nth-of-type(3) {
+  grid-column: 1/2;
+  grid-row: 3/4;
+}
+@media screen and (max-width: 768px) {
+  .main .platillos .platillos__container .platillos__cards .platillos__texts {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .main .platillos .platillos__container .platillos__cards .platillos__texts {
+    width: 100%;
+  }
+  .main .platillos .platillos__container .platillos__cards .platillos__texts:nth-of-type(1) {
+    grid-column: 1/2;
+    grid-row: 1/2;
+  }
+  .main .platillos .platillos__container .platillos__cards .platillos__texts:nth-of-type(2) {
+    grid-column: 1/2;
+    grid-row: 3/4;
+  }
+  .main .platillos .platillos__container .platillos__cards .platillos__texts:nth-of-type(3) {
+    grid-column: 1/2;
+    grid-row: 5/6;
+  }
+}
+.main .platillos .platillos__container .platillos__cards .platillos__figure {
+  width: 75%;
+  height: 100%;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__figure:nth-of-type(odd) {
+  place-self: start;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__figure:nth-of-type(even) {
+  place-self: end;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__figure .platillos__img {
+  width: 100%;
+  height: 250px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__figure:nth-of-type(1) {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__figure:nth-of-type(2) {
+  grid-column: 1/2;
+  grid-row: 2/3;
+}
+.main .platillos .platillos__container .platillos__cards .platillos__figure:nth-of-type(3) {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+@media screen and (max-width: 768px) {
+  .main .platillos .platillos__container .platillos__cards .platillos__figure {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .main .platillos .platillos__container .platillos__cards .platillos__figure {
+    width: 100%;
+  }
+  .main .platillos .platillos__container .platillos__cards .platillos__figure:nth-of-type(1) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+  }
+  .main .platillos .platillos__container .platillos__cards .platillos__figure:nth-of-type(2) {
+    grid-column: 1/2;
+    grid-row: 4/5;
+  }
+  .main .platillos .platillos__container .platillos__cards .platillos__figure:nth-of-type(3) {
+    grid-column: 1/2;
+    grid-row: 6/7;
+  }
+}
+.main .cafe {
+  height: auto;
+  padding-top: 0.1px;
+}
+.main .cafe .cafe__container {
+  margin-top: 90px;
+  min-height: 450px;
+  font-family: "Roboto", sans-serif;
+}
+@media screen and (max-width: 425px) {
+  .main .cafe .cafe__container {
+    margin-top: 130px;
+  }
+}
+.main .cafe .cafe__container .cafe__title {
+  color: #284148;
+  font-size: 46px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.main .cafe .cafe__container .cafe__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: max-content;
+  place-items: center;
+}
+@media screen and (max-width: 768px) {
+  .main .cafe .cafe__container .cafe__cards {
+    row-gap: 30px;
+  }
+}
+.main .cafe .cafe__container .cafe__cards .cafe__card {
+  width: 70%;
+  height: 100%;
+}
+@media screen and (max-width: 768px) {
+  .main .cafe .cafe__container .cafe__cards .cafe__card {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .main .cafe .cafe__container .cafe__cards .cafe__card {
+    width: 100%;
+  }
+}
+.main .cafe .cafe__container .cafe__cards .cafe__card .cafe__img {
+  width: 100%;
+  height: 210px;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.main .cafe .cafe__container .cafe__cards .cafe__card .cafe__caption {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #517E78;
+  font-weight: 500;
+}
+.main .contacto {
+  height: auto;
+  padding-top: 0.1px;
+  background-color: #F2DCD4;
+}
+.main .contacto .contacto__container {
+  margin-top: 90px;
+  min-height: 500px;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 425px) {
+  .main .contacto .contacto__container {
+    margin-top: 130px;
+  }
+}
+.main .contacto .contacto__container .contacto__title {
+  color: #284148;
+  font-size: 46px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.main .contacto .contacto__container .contacto__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: max-content;
+  place-items: center;
+}
+@media screen and (max-width: 768px) {
+  .main .contacto .contacto__container .contacto__cards {
+    grid-template-columns: 1fr;
+    grid-template-rows: max-content max-content;
+    gap: 40px;
+  }
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+@media screen and (max-width: 768px) {
+  .main .contacto .contacto__container .contacto__cards .contacto__form {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 425px) {
+  .main .contacto .contacto__container .contacto__cards .contacto__form {
+    width: 90%;
+  }
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .correo__container {
+  position: relative;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__input {
+  display: block;
+  width: 100%;
+  padding: 15px 15px 15px 10px;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid #517E78;
+  color: #517E78;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__input:focus {
+  color: #284148;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__input:focus + .correo__label {
+  color: #284148;
+  transform: translateY(-30px) scale(0.7);
+  transition: 400ms all ease-in;
+  transform-origin: left;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__input:focus ~ .correo__span {
+  transform: scale(1);
+  transition: 400ms transform ease-in;
+  transform-origin: left;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__input:not(:placeholder-shown) + .correo__label {
+  color: #284148;
+  transform: translateY(-30px) scale(0.7);
+  transition: 400ms all ease-in;
+  transform-origin: left;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__label {
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  right: 15px;
+  pointer-events: none;
+  color: #517E78;
+  transform: translateY(0) scale(1);
+  transition: 200ms transform ease-in;
+  transform-origin: left;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .correo__container .correo__span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #284148;
+  transform: scale(0);
+  transition: 200ms transform ease-in;
+  transform-origin: left;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container {
+  position: relative;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__textarea {
+  resize: none;
+  height: 120px;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  padding: 15px 15px 15px 10px;
+  outline: none;
+  background-color: transparent;
+  border-bottom: 1px solid #517E78;
+  color: #517E78;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__textarea:focus {
+  color: #284148;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__textarea:focus + .mensaje__label {
+  color: #284148;
+  transform: translateY(-30px) scale(0.7);
+  transform-origin: left;
+  transition: 400ms all ease-in;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__textarea:focus ~ .mensaje__span {
+  transform: scale(1);
+  transition: 400ms transform ease-in;
+  transform-origin: left;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__textarea:not(:placeholder-shown) + .mensaje__label {
+  color: #284148;
+  transform: translateY(-30px) scale(0.7);
+  transform-origin: left;
+  transition: 400ms all ease-in;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__label {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: absolute;
+  top: 15px;
+  left: 10px;
+  right: 15px;
+  pointer-events: none;
+  color: #517E78;
+  transform: translateY(0) scale(1);
+  transition: 200ms transform ease-in;
+  transform-origin: left;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .mensaje__container .mensaje__span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #284148;
+  transform: scale(0);
+  transition: 200ms transform ease-in;
+  transform-origin: left;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .contacto__button {
+  background-color: #D88260;
+  display: block;
+  width: 200px;
+  height: 50px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 100ms transform ease-in-out;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__form .contacto__button:active {
+  transform: scale(0.93);
+  transition: 100ms transform ease-in-out;
+}
+.main .contacto .contacto__container .contacto__cards .contacto__maps {
+  width: 90%;
+  height: 100%;
+}
+@media screen and (max-width: 768px) {
+  .main .contacto .contacto__container .contacto__cards .contacto__maps {
+    width: 70%;
+    height: 400px;
+  }
+}
+@media screen and (max-width: 425px) {
+  .main .contacto .contacto__container .contacto__cards .contacto__maps {
+    width: 90%;
+  }
+}
+.main .contacto .contacto__container .contacto__cards .contacto__maps .contacto__iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  height: auto;
+  background-color: #284148;
+}
+.footer .footer__container {
+  min-height: 125px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 425px) {
+  .footer .footer__container {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 20px;
+  }
+}
+.footer .footer__container .footer__info .footer__advice {
+  font-size: 14px;
+  font-weight: 400;
+}
+.footer .footer__container .footer__info .footer__terms {
+  font-size: 14px;
+  font-weight: 400;
+}
+.footer .footer__container .footer__info .footer__copyright {
+  font-size: 14px;
+  font-weight: 400;
+}
+.footer .footer__container .footer__email {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+}
+.footer .footer__container .footer__email .footer__link {
+  color: white;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
