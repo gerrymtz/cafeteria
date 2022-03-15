@@ -640,7 +640,7 @@ body {
 }
 @media screen and (max-width: 425px) {
   .main .contacto .contacto__container .contacto__cards .contacto__form {
-    width: 90%;
+    width: 100%;
   }
 }
 .main .contacto .contacto__container .contacto__cards .contacto__form .correo__container {
@@ -799,7 +799,7 @@ body {
 }
 @media screen and (max-width: 425px) {
   .main .contacto .contacto__container .contacto__cards .contacto__maps {
-    width: 90%;
+    width: 100%;
   }
 }
 .main .contacto .contacto__container .contacto__cards .contacto__maps .contacto__iframe {
