@@ -19,7 +19,7 @@ body {
 }
 
 .header {
-    height: 100vh;
+    height: auto;
     padding-top: 0.1px;
 
     .header__nav {
@@ -28,22 +28,19 @@ body {
         left: 0;
         right: 0;
         z-index: 1;
-        height: index.$height_navbar;
+        height: auto;
         background-color: white;
         font-family: index.$roboto;
 
-        @media screen and (max-width: 425px) {
-            height: index.$height_navbar_mediaQuerie425;
-        }
-
         .header__container {
-            height: 100%;
+            height: index.$height_navbar;
             padding: 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
 
             @media screen and (max-width: 425px) {
+                height: index.$height_navbar_mediaQuerie425;
                 flex-direction: column;
                 justify-content: space-evenly;
                 align-items: center;
@@ -96,7 +93,7 @@ body {
                     display: flex;
                     justify-content: space-evenly;
                     flex-wrap: wrap;
-                    row-gap: 10px;
+                    row-gap: 15px;
                 }
 
                 .menu__item {
@@ -155,7 +152,7 @@ body {
 
         @media screen and (max-width: 425px) {
             margin-top: index.$height_navbar_mediaQuerie425;
-            height: calc(100% - index.$height_navbar_mediaQuerie425);
+            height: calc(100vh - index.$height_navbar_mediaQuerie425);
         }
 
         .header__container {

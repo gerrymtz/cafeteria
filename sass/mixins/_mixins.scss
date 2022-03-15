@@ -29,7 +29,7 @@
 }
 
 @mixin setHeightMarginTop {
-    height: calc(100% - variables.$height_navbar);
+    height: calc(100vh - variables.$height_navbar);
     margin-top: variables.$height_navbar;
 }
 
