@@ -101,7 +101,7 @@ body {
                     background-color: transparent;
                     padding: 10px 25px;
                     border-radius: 5px;
-                    transition: 300ms all ease-in;
+                    transition: 300ms background-color ease-in;
 
                     @media screen and (max-width: 768px) {
                         padding: 0;
@@ -122,15 +122,16 @@ body {
                         color: index.$color_principal_1;
                         font-size: index.$roboto14;
                         font-weight: index.$robotoW400;
+                        transition: 200ms color ease-in;
                     }
 
                     &:hover {
                         background-color: index.$color_secundario_1;
-                        transition: 200ms all ease-in;
+                        transition: 200ms background-color ease-in;
 
                         .menu__link {
                             color: white;
-                            font-weight: index.$robotoW500;
+                            transition: 200ms color ease-in
                         }
 
                     }
